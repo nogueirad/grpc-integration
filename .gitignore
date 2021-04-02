@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+discount-service/.idea
 
 # Test binary, built with `go test -c`
 *.test
