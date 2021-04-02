@@ -11,8 +11,8 @@ import (
 )
 
 var (
-	mongodbUri = "mongodb://localhost:27017/"
-	grpcPort uint = 50051
+	mongodbUri      = "mongodb://localhost:27017/"
+	grpcPort   uint = 50051
 )
 
 func main() {
@@ -23,9 +23,9 @@ func main() {
 	userRepository := repository.NewUserRepository(usersCollection)
 	productRepository := repository.NewProductRepository(productsCollection)
 	discountService := service.NewService(userRepository, productRepository)
-    discountGrpcHandler := handler.NewDiscountGrpcHandler(discountService)
+	discountGrpcHandler := handler.NewDiscountGrpcHandler(discountService)
 
-    netListener := listener.GetNetListener(grpcPort)
+	netListener := listener.GetNetListener(grpcPort)
 
 	grpcServer := grpc.NewServer()
 
